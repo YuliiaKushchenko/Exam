@@ -1,0 +1,39 @@
+#TC_001 Registration of new user
+Precondition:
+1. Open Homepage https://dermal-cosmetics.com.ua/
+2. Open the login page
+3. Check that user is not registered yet:
+- Input valid email in the login form
+- Input valid password in the login form
+- Click on the "Увійти" button
+- Check that "Невідома email адреса. Перевірте чи спробуйте ваше ім'я користувача." text is displayed on the page
+
+STR:
+1. Open Homepage https://dermal-cosmetics.com.ua/
+2. Click on the "Авторизуватися" button
+3. Input valid email in the registration form
+4. Input valid password in the registration form
+5. Click on the "Зареєструватися" button
+
+Expected Result:
+- Check that "Мій профіль" text is displayed on the page
+- Check that "Замовлення" link is displayed on the page
+- Check that "Вийти" link is displayed on the page
+
+Postcondition:
+1. Delete the user:
+- click on "Редагувати свій профіль.." link
+
+TC_002 Valid login to the site
+
+TC_003 Success subscribe
+
+TC_004 Check categories are displayed and links are correct in the menu
+
+TC_005 Add the product item  to the cart
+
+TC_006 Change the item quantity in the cart and update
+
+TC_007 Add the product items to the Wishlist
+
+TC_008 Remove the product item from the Wishlist
