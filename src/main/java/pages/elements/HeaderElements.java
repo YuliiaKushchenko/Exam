@@ -8,7 +8,7 @@ import pages.LoginPage;
 
 public class HeaderElements extends CommonActionsWithElements {
 
-    @FindBy(xpath = "//div[@class='action-button-container']//a[@href='https://dermal-cosmetics.com.ua/my-account/']")
+    @FindBy(xpath = "//a[@data-original-title='Авторизуватися']")
     private WebElement authorizationIcon;
 
     public HeaderElements(WebDriver webDriver) {
