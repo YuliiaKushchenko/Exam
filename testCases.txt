@@ -1,39 +1,92 @@
-#TC_001 Registration of new user
+TC_001 Valid login to the site with existing user
 Precondition:
-1. Open Homepage https://dermal-cosmetics.com.ua/
-2. Open the login page
-3. Check that user is not registered yet:
-- Input valid email in the login form
-- Input valid password in the login form
-- Click on the "Увійти" button
-- Check that "Невідома email адреса. Перевірте чи спробуйте ваше ім'я користувача." text is displayed on the page
+- Open Homepage https://dermal-cosmetics.com.ua/
 
 STR:
-1. Open Homepage https://dermal-cosmetics.com.ua/
-2. Click on the "Авторизуватися" button
-3. Input valid email in the registration form
-4. Input valid password in the registration form
-5. Click on the "Зареєструватися" button
+1. Click on the "Авторизуватися" button
+2. Check that Login page is opened
+3. Input existing user email in the login form
+4. Input existing user password in the login form
+5. Click on the "Увійти" button
 
 Expected Result:
 - Check that "Мій профіль" text is displayed on the page
 - Check that "Замовлення" link is displayed on the page
 - Check that "Вийти" link is displayed on the page
 
-Postcondition:
-1. Delete the user:
-- click on "Редагувати свій профіль.." link
 
-TC_002 Valid login to the site
+TC_002 Lost password functionality
+Precondition:
+- Open Homepage https://dermal-cosmetics.com.ua/
 
-TC_003 Success subscribe
+STR:
+1. Click on the "Авторизуватися" button
+2. Check that Login page is opened
+3. Click on the "Втратили свій пароль?" link
+4. Check that lost-password page is opened
+5. Check that "Пароль втрачено?" text is displayed on the page
+6. Input existing user email in the email field
+7. Click on the "Скинути пароль" button
 
-TC_004 Check categories are displayed and links are correct in the menu
+Expected Result:
+- Check that "Лист для відновлення паролю надіслано" text is displayed on the page
+- Check that "Скинути пароль" button is not displayed on the page
 
-TC_005 Add the product item  to the cart
 
-TC_006 Change the item quantity in the cart and update
+TC_003 Check categories are displayed and links are correct in the header menu
+Precondition:
+- Open Homepage https://dermal-cosmetics.com.ua/
 
-TC_007 Add the product items to the Wishlist
+STR:
+1. Check that following categories are displayed in the header menu:
+- "Головна", "Про нас", "Контакти", "Доставка і оплата", "Бонусна система", "Блог", "Відгуки", "Контакти"
+2. Click on the "Про нас" link and check that "Про нас" page is opened
+3. Click on the "Контакти" link and check that "Контакти" page is opened
+4. Click on the "Доставка і оплата" link and check that "Доставка і оплата" page is opened
+5. Click on the "Бонусна система" link and check that "Бонусна система" page is opened
+6. Click on the "Блог" link and check that "Блог" page is opened
+7. Click on the "Відгуки" link and check that "Відгуки" page is opened
+8. Click on the "Контакти" link and check that "Контакти" page is opened
 
-TC_008 Remove the product item from the Wishlist
+TC_004 Adding the product item  to the cart and removing it
+Precondition:
+- Open Homepage https://dermal-cosmetics.com.ua/
+
+STR:
+1. Insert the product name "Neauvia Antiox Concentrate Serum 4%" in the search field and click on the search icon
+2. Click on the "Neauvia Antiox Concentrate Serum 4%" item
+3. Check that "Neauvia Antiox Concentrate Serum 4%" product page is opened
+4. Click on selector "Виберіть опцію" and select the option "30 мл"
+5. Click on the "Додати в кошик" button
+6. Check that "Переглянути кошик" button is displayed on the page
+7. Click on the Cart icon in the header menu
+8. Check that page "Кошик" is opened
+9. Check that item "Neauvia Antiox Concentrate Serum 4%" is displayed on the cart page
+10. Click on the "Remove" button
+11. Check that item "Neauvia Antiox Concentrate Serum 4%" is not displayed on the cart page
+
+
+
+TC_005 Add the product items to the Wishlist and remove it
+Precondition:
+- Open Homepage https://dermal-cosmetics.com.ua/
+- Login to the site with existing user
+
+STR:
+1. Open the Wishlist: click on wishlist icon in the header menu
+2. Check that Wishlist page is opened
+3.Check that wishlist is emty. If not, remove all items from the wishlist
+4. Insert the product name "Medavita Solarich Olio in Crema Miracoloso" in the search field and click on the search icon and click on the search icon
+5. Check that "Medavita Solarich Olio in Crema Miracoloso" item is displayed in the search results
+6. Click on the heart icon to add the item to the wishlist
+7. Open the wishlist page: click on the wishlist icon in the header menu
+8. Check that "Medavita Solarich Olio in Crema Miracoloso" item is displayed on the wishlist page
+9. Click on the "Remove" button
+10. Check that "Medavita Solarich Olio in Crema Miracoloso" item is not displayed on the wishlist page
+
+
+
+
+
+
+
