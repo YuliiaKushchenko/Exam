@@ -3,6 +3,7 @@ package pages;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -108,4 +109,20 @@ public class CommonActionsWithElements {
             return elementName;
         }
     }
+    // create method for waiting until the page is loaded
+    protected void waitUntilPageIsLoaded() {
+        try {
+            webDriverWait15.until(webDriver1 -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
+    protected void checkItemUrl(String itemUrl) {
+        logger.info("Check url to contain " + itemUrl);
+        webDriverWait10.until(ExpectedConditions.urlContains(itemUrl));
+        Assert.assertTrue("Current url does not contain " + itemUrl, webDriver.getCurrentUrl().contains(itemUrl));
+        logger.info("Check was successful");
+    }
+
 }
