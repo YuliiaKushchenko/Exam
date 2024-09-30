@@ -11,7 +11,7 @@ STR:
 
 Expected Result:
 - Check that "Мій профіль" text is displayed on the page
-- Check that "Замовлення" link is displayed on the page
+- Check that "Майстерня" link is displayed on the page
 - Check that "Вийти" link is displayed on the page
 
 

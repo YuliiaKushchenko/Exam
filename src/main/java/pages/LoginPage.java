@@ -26,6 +26,9 @@ public class LoginPage extends ParentPage {
     @FindBy(xpath = "//h1[text()='Мій профіль']")
     private WebElement myProfileText;
 
+    @FindBy(xpath = "//a[text() = 'Втратили свій пароль?']")
+    private WebElement lostYourPasswordLink;
+
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -80,6 +83,11 @@ public class LoginPage extends ParentPage {
     public LoginPage isButtonSignOutVisible() {
         Assert.assertTrue("Button Sign Out is not visible", isElementVisible(buttonSignOut));
         return this;
+    }
+
+    public LostPasswordPage clickOnLostYourPasswordLink() {
+        clickOnElement(lostYourPasswordLink);
+        return new LostPasswordPage(webDriver);
     }
 }
 
