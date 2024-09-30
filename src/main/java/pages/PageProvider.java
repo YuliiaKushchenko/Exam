@@ -22,4 +22,8 @@ public class PageProvider {
         return new HeaderElements(webDriver);
 
     }
+
+    public LostPasswordPage getLostPasswordPage() {
+        return new LostPasswordPage(webDriver);
+    }
 }

@@ -58,25 +58,40 @@ public class CommonActionsWithElements {
             logger.info("Element is not visible");
             return false;
         }
-}
+    }
 
-protected boolean isElementVisible(String locator) {
+    protected boolean isElementVisible(String locator) {
         try {
             return isElementVisible(webDriver.findElement(By.xpath(locator)));
         } catch (Exception e) {
             logger.info("Element is not visible");
             return false;
         }
+    }
 
-}
-
-        protected void clickOnElement(WebElement webElement, String elementName) {
-    try {
-        webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
-        webElement.click();
-        logger.info(elementName + " element was clicked");
+    protected boolean isElementVisible(WebElement webElement, String elementName) {
+        try {
+            boolean state = webElement.isDisplayed();
+            if (state) {
+                logger.info(elementName + " element is displayed");
+            } else {
+                logger.info(elementName + " element is not displayed");
+            }
+            return state;
         } catch (Exception e) {
-        printErrorAndStopTest(e);
+            logger.info(elementName + " element is not visible");
+            return false;
+        }
+    }
+
+
+    protected void clickOnElement(WebElement webElement, String elementName) {
+        try {
+            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
+            webElement.click();
+            logger.info(elementName + " element was clicked");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
         }
     }
 
