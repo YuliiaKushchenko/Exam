@@ -19,11 +19,17 @@ public class PageProvider {
     }
 
     public HeaderElements getHeaderElements() {
-        return new HeaderElements(webDriver);
-
-    }
+        return new HeaderElements(webDriver);}
 
     public LostPasswordPage getLostPasswordPage() {
         return new LostPasswordPage(webDriver);
+    }
+
+    public ProductPage getProductPage() {
+        return new ProductPage(webDriver);
+    }
+
+    public CartPage getCartPage() {
+        return new CartPage(webDriver);
     }
 }

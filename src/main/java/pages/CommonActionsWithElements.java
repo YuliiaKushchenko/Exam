@@ -35,7 +35,7 @@ public class CommonActionsWithElements {
         }
     }
 
-    protected void clickOnElement(WebElement webElement) {
+    public void clickOnElement(WebElement webElement) {
         try {
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
             String elementName = getElementName(webElement);
@@ -95,6 +95,27 @@ public class CommonActionsWithElements {
             printErrorAndStopTest(e);
         }
     }
+
+    protected void clickOnElementByJavaScript(WebElement webElement, String elementName) {
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) webDriver;
+            js.executeScript("arguments[0].click();", webElement);
+            logger.info(elementName + " element was clicked by JavaScript");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
+    protected void selectValueFromDropdown(String text) {
+        try {
+            String locator = String.format("//li[@rel='%s']", text);
+            WebElement valueFromDropdown = webDriver.findElement(By.xpath(locator));
+            clickOnElementByJavaScript(valueFromDropdown, "Value from dropdown");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
 
     private void printErrorAndStopTest(Exception e) {
         logger.error("Can not work with element " + e);
