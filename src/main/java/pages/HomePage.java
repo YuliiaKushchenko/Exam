@@ -23,4 +23,6 @@ public class HomePage extends ParentPage {
         logger.info("Home page is opened " + baseUrl);
         return this;
     }
-}
+
+    }
+

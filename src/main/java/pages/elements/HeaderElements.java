@@ -5,8 +5,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.CartPage;
 import pages.CommonActionsWithElements;
 import pages.LoginPage;
+import pages.ProductPage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +18,16 @@ public class HeaderElements extends CommonActionsWithElements {
     @FindBy(xpath = "//a[@data-original-title='Авторизуватися']")
     private WebElement authorizationIcon;
 
+    @FindBy(xpath = "//input[@class='search-input']")
+    private WebElement inputSearch;
+
+    @FindBy(xpath = "//button[@class='search-submit icon-search']")
+    private WebElement searchIcon;
+
+    @FindBy(xpath = "//span[@class='action-button icon-mini-cart']")
+    private WebElement cartIcon;
+
+
     public HeaderElements(WebDriver webDriver) {
         super(webDriver);
     }
@@ -23,6 +35,7 @@ public class HeaderElements extends CommonActionsWithElements {
 
     public LoginPage clickOnAuthorizationIcon() {
         clickOnElement(authorizationIcon);
+        logger.info("Authorization icon is clicked");
         return new LoginPage(webDriver);
     }
 
@@ -45,5 +58,21 @@ public class HeaderElements extends CommonActionsWithElements {
                     checkItemUrl(menuItem);
                 }
         );
+    }
+
+    public ProductPage searchAndOpenProductItem(String text) {
+        clearAndEnterTextIntoElement(inputSearch, text);
+        clickOnElement(searchIcon);
+        String locator = String.format("//a[@title='%s']", text);
+        WebElement productTitle = webDriver.findElement(By.xpath(locator));
+        clickOnElement(productTitle);
+        logger.info("Product " + text + " was found and opened");
+        return new ProductPage(webDriver);
+    }
+
+    public CartPage openCart() {
+        clickOnElement(cartIcon);
+        logger.info("Cart page is opened");
+        return new CartPage(webDriver);
     }
 }
