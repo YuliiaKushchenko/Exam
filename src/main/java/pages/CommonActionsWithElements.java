@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
+
 
 public class CommonActionsWithElements {
     protected Logger logger = Logger.getLogger(getClass());
@@ -85,17 +87,6 @@ public class CommonActionsWithElements {
         }
     }
 
-
-    protected void clickOnElement(WebElement webElement, String elementName) {
-        try {
-            webDriverWait10.until(ExpectedConditions.elementToBeClickable(webElement));
-            webElement.click();
-            logger.info(elementName + " element was clicked");
-        } catch (Exception e) {
-            printErrorAndStopTest(e);
-        }
-    }
-
     protected void clickOnElementByJavaScript(WebElement webElement, String elementName) {
         try {
             JavascriptExecutor js = (JavascriptExecutor) webDriver;
@@ -130,13 +121,18 @@ public class CommonActionsWithElements {
             return elementName;
         }
     }
-    // create method for waiting until the page is loaded
+
     protected void waitUntilPageIsLoaded() {
         try {
             webDriverWait15.until(webDriver1 -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
+    }
+
+    public void waitUntilElementIsVisible(WebElement element, String elementName) {
+        webDriverWait10.until(ExpectedConditions.visibilityOf(element));
+        logger.info(elementName + " element is visible");
     }
 
     protected void checkItemUrl(String itemUrl) {

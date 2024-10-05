@@ -25,12 +25,6 @@ public class ProductPage extends ParentPage {
         return "/product/[a-zA-Z0-9]*/";
     }
 
-    public void openProductPage(String productTitle) {
-        String dynamicProductUrl = baseUrl + "/product/" + productTitle + "/";
-        webDriver.get(dynamicProductUrl);
-        logger.info(productTitle + " product page is opened");
-    }
-
     public void addProductToCart(String dropdownValue) {
         selectOptionFromDropdown(dropdownValue);
         clickOnAddToCartButton();
@@ -50,7 +44,7 @@ public class ProductPage extends ParentPage {
     }
 
     private void selectOptionFromDropdown(String text) { // 30-ml
-      clickOnElementByJavaScript(chooseTheOptionDropdown, "Choose the option dropdown");
+        clickOnElementByJavaScript(chooseTheOptionDropdown, "Choose the option dropdown");
         selectValueFromDropdown(text);
     }
 }
