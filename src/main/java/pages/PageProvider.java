@@ -18,8 +18,7 @@ public class PageProvider {
         return new HomePage(webDriver);
     }
 
-    public HeaderElements getHeaderElements() {
-        return new HeaderElements(webDriver);}
+    public HeaderElements getHeaderElements() {return new HeaderElements(webDriver);}
 
     public LostPasswordPage getLostPasswordPage() {
         return new LostPasswordPage(webDriver);
@@ -29,7 +28,7 @@ public class PageProvider {
         return new ProductPage(webDriver);
     }
 
-    public CartPage getCartPage() {
-        return new CartPage(webDriver);
-    }
+    public CartPage getCartPage() {return new CartPage(webDriver);}
+
+    public CategoryPage getCategoryPage() {return new CategoryPage(webDriver);}
 }

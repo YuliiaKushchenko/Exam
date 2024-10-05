@@ -41,22 +41,11 @@ public class CartPage extends ParentPage {
     public CartPage openCartAndDeleteProduct(String productName) {
         headerElements.openCart();
         removeProductFromCart(productName);
-        checkIsProductDeletedFromCart1(productName);
+        checkIsProductDeletedFromCart(productName);
         return this;
     }
 
     public CartPage checkIsProductDeletedFromCart(String text) {
-        try {
-            String locator = String.format("//td[@class='product-name']//a[contains(text(), '%s')]", text);
-            WebElement productTitle = webDriver.findElement(By.xpath(locator));
-            logger.info("Product is not deleted from cart");
-        } catch (Exception e) {
-            logger.info("Product is deleted from cart");
-        }
-        return this;
-    }
-
-    public CartPage checkIsProductDeletedFromCart1(String text) {
         String locator = String.format("//td[@class='product-name']//a[contains(text(), '%s')]", text);
         Assert.assertFalse("Product is not deleted from cart"
                 , isElementVisible(locator));

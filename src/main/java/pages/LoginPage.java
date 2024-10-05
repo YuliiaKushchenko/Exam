@@ -48,6 +48,7 @@ public class LoginPage extends ParentPage {
     }
 
     public void clickOnButtonSignIn() {
+
         clickOnElement(buttonSignIn);
     }
 
@@ -56,9 +57,9 @@ public class LoginPage extends ParentPage {
     }
 
     public void enterTextIntoInputLogin(String login) {
+
         clearAndEnterTextIntoElement(inputLoginInLoginForm, login);
     }
-
 
     private void openLoginPage() {
         webDriver.get(baseUrl + this.getRelativeUrl());

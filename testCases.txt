@@ -3,11 +3,11 @@ Precondition:
 - Open Homepage https://dermal-cosmetics.com.ua/
 
 STR:
-1. Click on the "Авторизуватися" button
+1. Click on Authorization button
 2. Check that Login page is opened
 3. Input existing user email in the login form
 4. Input existing user password in the login form
-5. Click on the "Увійти" button
+5. Click on submit button ("Увійти")
 
 Expected Result:
 - Check that "Мій профіль" text is displayed on the page
@@ -20,13 +20,13 @@ Precondition:
 - Open Homepage https://dermal-cosmetics.com.ua/
 
 STR:
-1. Click on the "Авторизуватися" button
+1. Click on Authorization button
 2. Check that Login page is opened
-3. Click on the "Втратили свій пароль?" link
+3. Click on lost password link ("Втратили свій пароль?")
 4. Check that lost-password page is opened
 5. Check that "Пароль втрачено?" text is displayed on the page
 6. Input existing user email in the email field
-7. Click on the "Скинути пароль" button
+7. Click on reset password button ("Скинути пароль")
 
 Expected Result:
 - Check that "Лист для відновлення паролю надіслано" text is displayed on the page
@@ -67,26 +67,11 @@ STR:
 
 
 
-TC_005 Add the product items to the Wishlist and remove it
-Precondition:
-- Open Homepage https://dermal-cosmetics.com.ua/
-- Login to the site with existing user
-
+TC_005 Check the Load More button functionality
 STR:
-1. Open the Wishlist: click on wishlist icon in the header menu
-2. Check that Wishlist page is opened
-3.Check that wishlist is emty. If not, remove all items from the wishlist
-4. Insert the product name "Medavita Solarich Olio in Crema Miracoloso" in the search field and click on the search icon and click on the search icon
-5. Check that "Medavita Solarich Olio in Crema Miracoloso" item is displayed in the search results
-6. Click on the heart icon to add the item to the wishlist
-7. Open the wishlist page: click on the wishlist icon in the header menu
-8. Check that "Medavita Solarich Olio in Crema Miracoloso" item is displayed on the wishlist page
-9. Click on the "Remove" button
-10. Check that "Medavita Solarich Olio in Crema Miracoloso" item is not displayed on the wishlist page
-
-
-
-
-
-
+- Open Homepage https://dermal-cosmetics.com.ua/
+- Click on "Обличчя" category
+- Check that "Обличчя" category page is opened
+- Click on the "Load More" button
+- Check that content is loaded
 

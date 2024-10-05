@@ -36,6 +36,7 @@ public class LostPasswordPage extends ParentPage{
     }
 
     public boolean isAlertMessageVisible() {
+
         return isElementVisible(alertMessage, "Alert message");
     }
 
